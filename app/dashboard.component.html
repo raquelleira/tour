@@ -1,0 +1,9 @@
+<h3>Events</h3>
+<div class="grid grid-pad">
+  <div *ngFor="let event of events" (click)="gotoDetail(event)" class="col-1-4">
+    <div class="module event">
+      <h3>{{event.name}}</h3>
+      <h4>{{event.startDate | date:'MM/dd/yy'}} to {{event.endDate | date:'MM/dd/yy'}}</h4>
+    </div>
+  </div>
+</div>

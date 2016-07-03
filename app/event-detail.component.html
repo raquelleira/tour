@@ -1,0 +1,20 @@
+<div *ngIf="event">
+  <h2>Your event: {{event.name}}</h2>
+  <div>
+    <label>Id: </label>{{event.id}}</div>
+  <div>
+    <label>Name: </label>
+    <input [(ngModel)]="event.name" placeholder="name" />
+   </div>
+   <div>
+    <label>Start Date: {{ event.startDate | date:'MM/dd/yy'}} </label>
+   <!-- <input [(ngModel)]="event.startDate" placeholder="Start date"/> -->
+    <datepicker [(ngModel)]="event.startDate" [showWeeks]="false" (click)="updated(event)" ></datepicker>
+   </div>
+   <div>
+    <label>End Date: {{ event.endDate | date:'MM/dd/yy'}}</label>
+    <datepicker [(ngModel)]="event.endDate" [showWeeks]="false" (click)="updateEndDate(event)"></datepicker>
+   </div>
+  <button (click)="goBack()">Back</button>
+  <button (click)="save()">Save</button>
+</div>
